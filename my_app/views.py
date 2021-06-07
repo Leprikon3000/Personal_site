@@ -1,8 +1,10 @@
 from django.shortcuts import render, HttpResponse
+
+from .forms import ContactMeForm
 from .models import User, Skills, About, Accomplishments
 
 def home(request):
-    # form = ContactMeForm
+    form = ContactMeForm
     user = User.objects.get(id=1)
     user_skills = user.skills.all()
     about = About.objects.get(id=1)
